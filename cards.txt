@@ -1,0 +1,12 @@
+ 0 [HDMI           ]: HDA-Intel - HDA Intel HDMI
+                      HDA Intel HDMI at 0xf2230000 irq 64
+ 1 [PCH            ]: HDA-Intel - HDA Intel PCH
+                      HDA Intel PCH at 0xf2234000 irq 65
+ 2 [Device         ]: USB-Audio - PrimeSense Device
+                      PrimeSense PrimeSense Device at usb-0000:00:14.0-3, high speed
+ 3 [DAC            ]: USB-Audio - USB Audio DAC
+                      Burr-Brown from TI USB Audio DAC at usb-0000:00:14.0-1.1, full speed
+ 4 [Device_1       ]: USB-Audio - USB PnP Sound Device
+                      C-Media Electronics Inc. USB PnP Sound Device at usb-0000:00:14.0-2, full speed
+29 [ThinkPadEC     ]: ThinkPad EC - ThinkPad Console Audio Control
+                      ThinkPad Console Audio Control at EC reg 0x30, fw unknown

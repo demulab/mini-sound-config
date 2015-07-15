@@ -1,0 +1,22 @@
+/proc/asound/card4
+├── id
+├── pcm0c
+│   ├── info
+│   └── sub0
+│       ├── hw_params
+│       ├── info
+│       ├── status
+│       └── sw_params
+├── pcm0p
+│   ├── info
+│   └── sub0
+│       ├── hw_params
+│       ├── info
+│       ├── status
+│       └── sw_params
+├── stream0
+├── usbbus
+├── usbid
+└── usbmixer
+
+4 directories, 15 files
