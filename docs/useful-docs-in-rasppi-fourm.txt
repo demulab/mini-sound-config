@@ -1,0 +1,55 @@
+If using a Raspberry Pi, follow the process below in order to generate the correct /etc/asound.rc file for your microphone and speaker setup.
+
+1) Run aplay -L
+2) This shows a list of devices connected to the Raspberry Pi which are capable of sound playback.  Note down the name shown after 'CARD='.  For example, the build-in raspberry pi sound card is 'ALSA'.
+
+3) Run arecord -L
+4) This shows a list of devices connected to the Raspberry Pi which are capable of sound capture. Again, note down the name show after 'CARD='.  For example, the microphone suggested on the Jasper project page, the Akiro Kinobo, is 'Device'.
+
+4) Run sudo nano /etc/asound.conf or sudo nano ~/.asound.conf
+5) Replace the contents of this file (it may already be blank) with the following, replacing PLAYBACK_DEVICE_NAME and RECORD_DEVICE_NAME with the information recorded above.
+
+pcm.usb
+{
+    type hw
+    card RECORD_DEVICE_NAME
+}
+
+pcm.internal
+{
+    type hw
+    card PLAYBACK_DEVICE_NAME
+}
+
+pcm.!default
+{
+    type asym
+    playback.pcm
+    {
+        type plug
+        slave.pcm "internal"
+    }
+    capture.pcm
+    {
+        type plug
+        slave.pcm "usb"
+    }
+}
+
+ctl.!default
+{
+    type asym
+    playback.pcm
+    {
+        type plug
+        slave.pcm "internal"
+    }
+    capture.pcm
+    {
+        type plug
+        slave.pcm "usb"
+    }
+}
+
+6) Press CTRL+X then type 'y' to save
+7) Reboot
